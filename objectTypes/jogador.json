@@ -1,0 +1,126 @@
+{
+	"name": "Jogador",
+	"plugin-id": "Sprite",
+	"sid": 341931023953933,
+	"isGlobal": true,
+	"instanceVariables": [
+		{
+			"name": "HP_jogador",
+			"type": "number",
+			"desc": "",
+			"sid": 143081551667863
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "EightDir",
+			"name": "8Direções",
+			"sid": 209539018512518
+		},
+		{
+			"behaviorId": "scrollto",
+			"name": "CentrarEm",
+			"sid": 557434748268125
+		},
+		{
+			"behaviorId": "bound",
+			"name": "RestritoAoLayout",
+			"sid": 651017815094739
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 108,
+						"height": 103,
+						"originX": 0.5,
+						"originY": 0.49514563106796117,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3425009,
+						"collisionPoly": {
+							"points": [
+								0.23148148148148148,
+								0.24271844660194175,
+								0.5,
+								0.06796116504854369,
+								0.6851851851851852,
+								0.32038834951456313,
+								0.9444444444444444,
+								0.5,
+								0.6944444444444444,
+								0.6796116504854369,
+								0.5,
+								0.9611650485436893,
+								0.19444444444444445,
+								0.7864077669902912,
+								0.037037037037037035,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Ponto de Imagem 1",
+								"x": 0.5092592592592593,
+								"y": 0.5048543689320388
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 108,
+						"height": 103,
+						"originX": 0.5,
+						"originY": 0.5145631067961165,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4639911,
+						"collisionPoly": {
+							"points": [
+								0.23148148148148148,
+								0.24271844660194175,
+								0.5,
+								0.06796116504854369,
+								0.6851851851851852,
+								0.32038834951456313,
+								0.9444444444444444,
+								0.5,
+								0.6944444444444444,
+								0.6796116504854369,
+								0.5,
+								0.9611650485436893,
+								0.19444444444444445,
+								0.7864077669902912,
+								0.037037037037037035,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Ponto de Imagem 1",
+								"x": 0.5092592592592593,
+								"y": 0.5048543689320388
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 532893613187940,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

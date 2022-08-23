@@ -1,0 +1,327 @@
+{
+	"name": "Folha de eventos 1",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 201266308622661
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle-toward-position",
+					"objectClass": "Jogador",
+					"sid": 922716429510154,
+					"parameters": {
+						"x": "Mouse.X",
+						"y": "Mouse.Y"
+					}
+				},
+				{
+					"id": "scroll-to-object",
+					"objectClass": "System",
+					"sid": 283529928475521,
+					"parameters": {
+						"object": "Jogador"
+					}
+				},
+				{
+					"id": "set-progress",
+					"objectClass": "BarraDeProgresso",
+					"sid": 309737367791171,
+					"parameters": {
+						"value": "Jogador.HP_jogador"
+					}
+				}
+			],
+			"sid": 356320356767063
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 736523372417736
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle-toward-position",
+					"objectClass": "Aranha",
+					"sid": 696405772327677,
+					"parameters": {
+						"x": "Jogador.X",
+						"y": "Jogador.Y"
+					}
+				},
+				{
+					"id": "move-forward",
+					"objectClass": "Aranha",
+					"sid": 245964826957123,
+					"parameters": {
+						"distance": "1"
+					}
+				}
+			],
+			"sid": 869066710352894
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 419839981824746,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Jogador",
+					"sid": 512670124368667,
+					"parameters": {
+						"object": "Projétil",
+						"layer": "0",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Jogador",
+					"sid": 646066632512437,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 550668310154114,
+					"parameters": {
+						"seconds": "0.2"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Jogador",
+					"sid": 600854180397976,
+					"parameters": {
+						"frame-number": "1"
+					}
+				},
+				{
+					"id": "play-by-name",
+					"objectClass": "Tiro",
+					"sid": 532374314604912,
+					"parameters": {
+						"folder": "sounds",
+						"audio-file-name": "\"Tiro\"",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 256899118019307
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 708586830482303,
+					"parameters": {
+						"interval-seconds": "5"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 166648637500230,
+					"parameters": {
+						"object-to-create": "Aranha",
+						"layer": "0",
+						"x": "100",
+						"y": "100",
+						"create-hierarchy": true
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 958638873879431,
+					"parameters": {
+						"object-to-create": "Aranha",
+						"layer": "0",
+						"x": "1600",
+						"y": "100",
+						"create-hierarchy": true
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 391688351489246,
+					"parameters": {
+						"object-to-create": "Aranha",
+						"layer": "0",
+						"x": "1600",
+						"y": "900",
+						"create-hierarchy": true
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 879926439168829,
+					"parameters": {
+						"object-to-create": "Aranha",
+						"layer": "0",
+						"x": "100",
+						"y": "900",
+						"create-hierarchy": true
+					}
+				}
+			],
+			"sid": 623265969988026
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Projétil",
+					"sid": 869600337515182,
+					"parameters": {
+						"object": "Aranha"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Projétil",
+					"sid": 627173214137252
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Aranha",
+					"sid": 718208151267132,
+					"parameters": {
+						"instance-variable": "HP_aranha",
+						"value": "Aranha.HP_aranha - 1"
+					}
+				},
+				{
+					"id": "set-default-color",
+					"objectClass": "Aranha",
+					"sid": 213518290388586,
+					"parameters": {
+						"color": "rgbEx(255, 0, 0)"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 429254945581045,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "set-default-color",
+					"objectClass": "Aranha",
+					"sid": 268168522531937,
+					"parameters": {
+						"color": "rgbEx(100, 100, 100)"
+					}
+				}
+			],
+			"sid": 689268549107803
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Aranha",
+					"sid": 843658237991254,
+					"parameters": {
+						"instance-variable": "HP_aranha",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Aranha",
+					"sid": 176367111747137
+				}
+			],
+			"sid": 835736497851743
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Aranha",
+					"sid": 286473569848999,
+					"parameters": {
+						"object": "Jogador"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Jogador",
+					"sid": 970904276721553,
+					"parameters": {
+						"instance-variable": "HP_jogador",
+						"value": "Jogador.HP_jogador - 1"
+					}
+				}
+			],
+			"sid": 434515146023628
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Jogador",
+					"sid": 529353471328311,
+					"parameters": {
+						"instance-variable": "HP_jogador",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Jogador",
+					"sid": 328782750245441
+				}
+			],
+			"sid": 483916559236766
+		}
+	],
+	"sid": 810880494132580
+}
